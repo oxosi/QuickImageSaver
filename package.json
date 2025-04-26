@@ -1,0 +1,16 @@
+{
+  "name": "quickimagesaver",
+  "version": "0.1.0",
+  "description": "Chrome extension QuickImageSaver",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.32",
+    "typescript": "^5.2.0",
+    "vite": "^5.0.0",
+    "@types/chrome": "^0.0.244"
+  }
+} 

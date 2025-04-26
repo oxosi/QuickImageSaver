@@ -1,0 +1,37 @@
+{
+  "name": "QuickImageSaver",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "description": "Save images quickly with double-click",
+  "action": {
+    "default_title": "Quick Image Saver",
+    "default_popup": "src/options.html"
+  },
+  "permissions": [
+    "downloads",
+    "activeTab",
+    "storage",
+    "downloads.shelf",
+    "scripting",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.ts"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/options.html", "src/options.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+} 
