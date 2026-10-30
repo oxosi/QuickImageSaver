@@ -182,19 +182,39 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 // 画像ビューワーページにイベントリスナーを注入する関数
 function injectImageViewerListener(imageUrl: string) {
   console.log('画像ビューワーにリスナーを注入します:', imageUrl);
-  
-  // 画像要素にダブルクリックイベントリスナーを追加
+
+  const saveImage = () => {
+    chrome.runtime.sendMessage({
+      action: 'saveImage',
+      imageUrl: imageUrl
+    });
+  };
+
+  // 画像要素にダブルクリック／中ボタンスクリックのリスナーを追加
+  // 中ボタンは button === 1。スクロール可能ページでは Chrome のオートスクロールで
+  // auxclick が来ないことがあるため、保存は mousedown で行う。
   const imgElement = document.querySelector('img');
   if (imgElement) {
     imgElement.addEventListener('dblclick', () => {
       console.log('画像がダブルクリックされました');
-      chrome.runtime.sendMessage({
-        action: 'saveImage',
-        imageUrl: imageUrl
-      });
+      saveImage();
     });
-    
-    console.log('画像要素にダブルクリックリスナーを追加しました');
+
+    imgElement.addEventListener('mousedown', (event) => {
+      if (event.button !== 1) return;
+      console.log('画像が中ボタンスクリックされました');
+      event.preventDefault();
+      event.stopPropagation();
+      saveImage();
+    });
+
+    imgElement.addEventListener('auxclick', (event) => {
+      if (event.button !== 1) return;
+      event.preventDefault();
+      event.stopPropagation();
+    });
+
+    console.log('画像要素にダブルクリック／中ボタンリスナーを追加しました');
   } else {
     console.warn('画像要素が見つかりませんでした');
   }
