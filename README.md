@@ -1,75 +1,82 @@
 # QuickImageSaver
 
-画像をダブルクリックするだけで簡単に保存できるChrome拡張機能です。
+A Chrome extension that lets you save images quickly with a double-click or mouse wheel (middle-button) click.
 
-## 機能
+## Features
 
-- ウェブページ上の画像をダブルクリックするだけで保存
-- 画像ビューワーで開いた画像もダブルクリックで保存可能
-- ブラウザのデフォルトのダウンロードフォルダに自動保存
+- Save images on web pages with a double-click or mouse wheel (middle-button) click
+- Works the same way in the browser’s image viewer tab
+- Middle-clicking a linked image (`<a href="...">`) still opens the link in a new tab
+- Saves to the browser’s default download folder
 
-## インストール方法（野良拡張機能として）
+## Installation (unpacked extension)
 
-1. このリポジトリをクローンまたはダウンロードします
+1. Clone or download this repository:
    ```
    git clone https://github.com/oxosi/QuickImageSaver.git
    ```
 
-2. 必要なパッケージをインストールします
+2. Install dependencies:
    ```
    npm install
    ```
 
-3. 拡張機能をビルドします
+3. Build the extension:
    ```
    npm run build
    ```
 
-4. Chromeブラウザを開き、アドレスバーに `chrome://extensions` と入力します
+4. Open Chrome and go to `chrome://extensions`
 
-5. 右上の「デベロッパーモード」をオンにします
+5. Turn on **Developer mode** (top right)
 
-6. 「パッケージ化されていない拡張機能を読み込む」ボタンをクリックします
+6. Click **Load unpacked**
 
-7. `QuickImageSaver`フォルダ内の`dist`ディレクトリを選択します
+7. Select the `dist` directory inside the `QuickImageSaver` folder
 
-8. 拡張機能がインストールされ、使用可能になります
+8. The extension is installed and ready to use
 
-## 使い方
+## Usage
 
-1. インストール後、Chromeのツールバーに拡張機能のアイコンが表示されます
+1. After installation, the extension icon appears in the Chrome toolbar
 
-2. ウェブページ上の画像の上にマウスを移動すると、画像に青い枠が表示されます
+2. Hover over an image on a page — a blue outline appears
 
-3. 画像をダブルクリックすると、自動的にブラウザのデフォルトのダウンロードフォルダに保存されます
+3. Double-click or middle-click (mouse wheel click) the image to save it to your default download folder
 
-4. 画像ビューワー（画像だけを直接表示しているタブ）でも同様にダブルクリックで保存できます
+4. Middle-clicking a linked image opens the link in a new tab instead of saving
 
-## 開発
+5. The same save gestures work in the image viewer (a tab that shows only the image)
 
-### 前提条件
+## Development
+
+### Prerequisites
 
 - Node.js
 - npm
 
-### 開発用インストール
+### Install
 
 ```
 npm install
 ```
 
-### 開発サーバーの起動
+### Dev server
 
 ```
 npm run dev
 ```
 
-### ビルド
+### Build
 
 ```
 npm run build
 ```
 
-## ライセンス
+## License
 
-このプロジェクトはオープンソースであり、[MITライセンス](LICENSE)の下で公開されています。 
+This project is open source under the [MIT License](LICENSE).
+
+## 日本語
+
+日本語版は [README_JP.md](README_JP.md) を参照してください。
