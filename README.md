@@ -40,13 +40,11 @@ A Chrome extension that lets you save images quickly with a double-click or mous
 
 1. After installation, the extension icon appears in the Chrome toolbar
 
-2. Hover over an image on a page — a blue outline appears
+2. Double-click or middle-click (mouse wheel click) an image to save it to your default download folder
 
-3. Double-click or middle-click (mouse wheel click) the image to save it to your default download folder
+3. Middle-clicking a linked image opens the link in a new tab instead of saving
 
-4. Middle-clicking a linked image opens the link in a new tab instead of saving
-
-5. The same save gestures work in the image viewer (a tab that shows only the image)
+4. The same save gestures work in the image viewer (a tab that shows only the image)
 
 ## Development
 
